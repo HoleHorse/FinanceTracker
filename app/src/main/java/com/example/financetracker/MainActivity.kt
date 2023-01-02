@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         val myDataset = Datasource().getData()
         val linearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         val recyclerView = findViewById<RecyclerView>(R.id.recent_list)
-        recyclerView.adapter = ActionAdapter(this, myDataset)
+        recyclerView.adapter = ActionAdapter(this, myDataset, 7)
         recyclerView.layoutManager = linearLayoutManager
     }
 }

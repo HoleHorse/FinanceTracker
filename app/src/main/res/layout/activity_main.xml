@@ -11,10 +11,14 @@
         android:id="@+id/recent_list"
         android:layout_width="380dp"
         android:layout_height="380dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:paddingBottom="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/add_btn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recent_actions" />
+        app:layout_constraintTop_toBottomOf="@+id/recent_actions"
+        app:layout_constraintVertical_bias="0.066" />
 
     <TextView
         android:id="@+id/balance"
@@ -121,7 +125,7 @@
         app:srcCompat="@drawable/arrow_down_circle_svgrepo_com" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton3"
+        android:id="@+id/add_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
@@ -132,5 +136,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_input_add" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/add_btn"
+        app:srcCompat="@drawable/list_svgrepo_com" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
