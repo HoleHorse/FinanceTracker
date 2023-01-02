@@ -137,16 +137,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_input_add" />
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:layout_marginEnd="5dp"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="5dp"
-        android:backgroundTint="#00FFFFFF"
-        android:contentDescription="@string/see_all"
+        android:clickable="true"
+        android:contentDescription="@string/temp"
+        android:src="@drawable/list_svgrepo_com"
+        app:backgroundTint="#00FF00"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/add_btn"
-        app:srcCompat="@drawable/list_svgrepo_com" />
+        app:layout_constraintEnd_toStartOf="@+id/add_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

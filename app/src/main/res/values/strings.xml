@@ -11,4 +11,5 @@
     <string name="category_food">Category: Food</string>
     <string name="amount_5000">Amount: 5000</string>
     <string name="see_all">See all</string>
+    <string name="temp">temp</string>
 </resources>
