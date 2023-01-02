@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="arrow_up" type="id" />
+    <item name="month_income" type="id" />
+    <item name="last_month_total" type="id" />
+    <item name="spent" type="id" />
+    <item name="month_spent" type="id" />
+    <item name="arrow_down" type="id" />
+    <item name="floatingActionButton3" type="id" />
+    <item name="income" type="id" />
+    <item name="Balance" type="id" />
+    <item name="recent_actions" type="id" />
+</resources>
