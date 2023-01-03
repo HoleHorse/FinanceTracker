@@ -2,33 +2,34 @@ package com.example.financetracker.data
 
 import com.example.financetracker.R
 import com.example.financetracker.model.Action
+import java.time.LocalDate
 
 class Datasource {
     private var actions: MutableList<Action> = mutableListOf(
-        Action("Food", 5000, R.drawable.arrow_down_circle_svgrepo_com),
-        Action("Rent", 100000, R.drawable.arrow_down_circle_svgrepo_com),
-        Action("Salary", 250000, R.drawable.arrow_up_circle_svgrepo_com),
-        Action("Leisure", 20000, R.drawable.arrow_down_circle_svgrepo_com),
-        Action("Gift", 15000, R.drawable.arrow_up_circle_svgrepo_com),
-        Action("Rent", 100000, R.drawable.arrow_down_circle_svgrepo_com),
-        Action("Salary", 250000, R.drawable.arrow_up_circle_svgrepo_com),
-        Action("Leisure", 30000, R.drawable.arrow_down_circle_svgrepo_com),
-        Action("Food", 5000, R.drawable.arrow_down_circle_svgrepo_com),
-        Action("Rent", 100000, R.drawable.arrow_down_circle_svgrepo_com),
-        Action("Salary", 250000, R.drawable.arrow_up_circle_svgrepo_com),
-        Action("Leisure", 20000, R.drawable.arrow_down_circle_svgrepo_com),
-        Action("Gift", 15000, R.drawable.arrow_up_circle_svgrepo_com),
-        Action("Rent", 100000, R.drawable.arrow_down_circle_svgrepo_com),
-        Action("Salary", 250000, R.drawable.arrow_up_circle_svgrepo_com),
-        Action("Leisure", 30000, R.drawable.arrow_down_circle_svgrepo_com),
-        Action("Food", 5000, R.drawable.arrow_down_circle_svgrepo_com),
-        Action("Rent", 100000, R.drawable.arrow_down_circle_svgrepo_com),
-        Action("Salary", 250000, R.drawable.arrow_up_circle_svgrepo_com),
-        Action("Leisure", 20000, R.drawable.arrow_down_circle_svgrepo_com),
-        Action("Gift", 15000, R.drawable.arrow_up_circle_svgrepo_com),
-        Action("Rent", 100000, R.drawable.arrow_down_circle_svgrepo_com),
-        Action("Salary", 250000, R.drawable.arrow_up_circle_svgrepo_com),
-        Action("Leisure", 30000, R.drawable.arrow_down_circle_svgrepo_com)
+        Action("Leisure", 20000, R.drawable.arrow_down_circle_svgrepo_com, LocalDate.of(2019, 8, 23)),
+        Action("Gift", 15000, R.drawable.arrow_up_circle_svgrepo_com, LocalDate.of(2019, 8, 23)),
+        Action("Rent", 100000, R.drawable.arrow_down_circle_svgrepo_com, LocalDate.of(2019, 8, 23)),
+        Action("Salary", 250000, R.drawable.arrow_up_circle_svgrepo_com, LocalDate.of(2019, 8, 23)),
+        Action("Leisure", 30000, R.drawable.arrow_down_circle_svgrepo_com, LocalDate.of(2019, 8, 23)),
+        Action("Food", 5000, R.drawable.arrow_down_circle_svgrepo_com, LocalDate.of(2019, 8, 23)),
+        Action("Rent", 100000, R.drawable.arrow_down_circle_svgrepo_com, LocalDate.of(2019, 8, 23)),
+        Action("Salary", 250000, R.drawable.arrow_up_circle_svgrepo_com, LocalDate.of(2019, 8, 23)),
+        Action("Leisure", 20000, R.drawable.arrow_down_circle_svgrepo_com, LocalDate.of(2019, 8, 23)),
+        Action("Gift", 15000, R.drawable.arrow_up_circle_svgrepo_com, LocalDate.of(2019, 8, 23)),
+        Action("Rent", 100000, R.drawable.arrow_down_circle_svgrepo_com, LocalDate.of(2019, 8, 23)),
+        Action("Salary", 250000, R.drawable.arrow_up_circle_svgrepo_com, LocalDate.of(2019, 8, 23)),
+        Action("Leisure", 30000, R.drawable.arrow_down_circle_svgrepo_com, LocalDate.of(2019, 8, 23)),
+        Action("Food", 5000, R.drawable.arrow_down_circle_svgrepo_com, LocalDate.now()),
+        Action("Rent", 100000, R.drawable.arrow_down_circle_svgrepo_com, LocalDate.now()),
+        Action("Salary", 250000, R.drawable.arrow_up_circle_svgrepo_com, LocalDate.now()),
+        Action("Leisure", 20000, R.drawable.arrow_down_circle_svgrepo_com, LocalDate.now()),
+        Action("Gift", 15000, R.drawable.arrow_up_circle_svgrepo_com, LocalDate.now()),
+        Action("Rent", 100000, R.drawable.arrow_down_circle_svgrepo_com, LocalDate.now()),
+        Action("Salary", 250000, R.drawable.arrow_up_circle_svgrepo_com, LocalDate.now()),
+        Action("Leisure", 30000, R.drawable.arrow_down_circle_svgrepo_com, LocalDate.now()),
+        Action("Food", 5000, R.drawable.arrow_down_circle_svgrepo_com, LocalDate.now()),
+        Action("Rent", 100000, R.drawable.arrow_down_circle_svgrepo_com, LocalDate.now()),
+        Action("Salary", 250000, R.drawable.arrow_up_circle_svgrepo_com, LocalDate.now())
     )
 
     fun getRecent(limit: Int): List<Action> {
@@ -50,10 +51,14 @@ class Datasource {
         for (a in actions) {
             if (a.getImg() == R.drawable.arrow_up_circle_svgrepo_com) {
                 balance += a.getAmount()
-                income += a.getAmount()
+                if (!a.getDate().isBefore(LocalDate.now().minusDays(30))) {
+                    income += a.getAmount()
+                }
             } else {
                 balance -= a.getAmount()
-                spent += a.getAmount()
+                if (!a.getDate().isBefore(LocalDate.now().minusDays(30))) {
+                    spent += a.getAmount()
+                }
             }
         }
         return Numbers(balance, income, spent)

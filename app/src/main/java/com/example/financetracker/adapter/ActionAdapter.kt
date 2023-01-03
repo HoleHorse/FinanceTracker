@@ -12,17 +12,20 @@ import com.example.financetracker.R
 import com.example.financetracker.model.Action
 
 class ActionAdapter(private var dataset: List<Action>) : RecyclerView.Adapter<ActionAdapter.ActionViewHolder>() {
+
     class ActionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imgState: ImageView
         val category: TextView
         val amount: TextView
+        val date: TextView
         init {
             imgState = itemView.findViewById(R.id.img_state)
             category = itemView.findViewById(R.id.category)
             amount = itemView.findViewById(R.id.amount)
+            date = itemView.findViewById(R.id.date)
         }
     }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActionAdapter.ActionViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActionViewHolder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.action_card, parent, false)
         return ActionViewHolder(view)
     }
@@ -33,6 +36,7 @@ class ActionAdapter(private var dataset: List<Action>) : RecyclerView.Adapter<Ac
         holder.category.text = "Category: " + action.getCategory()
         holder.amount.text = "Amount: " + action.getAmount().toString()
         holder.imgState.setImageResource(action.getImg())
+        holder.date.text = "Date: " + action.getDate()
     }
 
     override fun getItemCount() = dataset.size
