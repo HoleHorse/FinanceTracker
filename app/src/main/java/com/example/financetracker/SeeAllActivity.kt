@@ -16,7 +16,7 @@ class SeeAllActivity: AppCompatActivity() {
         binding = SeeAllBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val myDataset = Datasource().getAll()
+        val myDataset = Datasource.getAll()
         val linearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.allList.adapter = ActionAdapter(myDataset)
         binding.allList.layoutManager = linearLayoutManager

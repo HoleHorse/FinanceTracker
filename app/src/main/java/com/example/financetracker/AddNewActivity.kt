@@ -21,25 +21,24 @@ class AddNewActivity: AppCompatActivity() {
 
         binding.button.setOnClickListener {
             addNew()
-            startActivity(Intent(this, AddNewActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
         }
     }
 
     private fun addNew() {
         var amount = binding.inputAmount.text.toString().toIntOrNull()
         var category = binding.inputCategory.text.toString()
-        if (amount == null) {
+        if (amount == null || amount < 0) {
             amount = 0
         }
         if (category == "") {
             category = "Undefined"
         }
         if (binding.status.checkedRadioButtonId == R.id.income) {
-            Datasource().addNew(Action(category, amount, R.drawable.arrow_up_circle_svgrepo_com, LocalDate.now()))
+            Datasource.addNew(Action(category, amount, R.drawable.arrow_up_circle_svgrepo_com, LocalDate.now()))
         } else {
-            Datasource().addNew(Action(category, amount, R.drawable.arrow_down_circle_svgrepo_com, LocalDate.now()))
+            Datasource.addNew(Action(category, amount, R.drawable.arrow_down_circle_svgrepo_com, LocalDate.now()))
         }
-
     }
 
 }
