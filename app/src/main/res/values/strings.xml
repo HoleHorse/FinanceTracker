@@ -12,4 +12,6 @@
     <string name="amount_5000">Amount: 5000</string>
     <string name="see_all">See all</string>
     <string name="temp">temp</string>
+    <string name="category"> Category</string>
+    <string name="amount"> Amount</string>
 </resources>

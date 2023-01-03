@@ -1,9 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black">
 
+    <EditText
+        android:id="@+id/input_amount"
+        android:layout_width="170dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/gray"
+        android:hint="@string/amount"
+        android:inputType="number"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#70FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></EditText>
+
+    <EditText
+        android:id="@+id/input_category"
+        android:layout_width="170dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/gray"
+        android:hint="@string/category"
+        android:inputType="textAutoCorrect|textPersonName|text|textAutoComplete"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#70FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/input_amount"
+        app:layout_constraintTop_toTopOf="parent"></EditText>
+
+    <RadioGroup
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/gray"
+        android:checkedButton="@id/income"
+        android:orientation="vertical"
+        android:paddingEnd="243dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_amount">
+
+        <RadioButton
+            android:id="@+id/income"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/green"
+            android:minHeight="48dp"
+            android:text="@string/income"
+            android:textColor="@color/green"
+            android:textSize="18dp" />
+
+        <RadioButton
+            android:id="@+id/spent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/red"
+            android:minHeight="48dp"
+            android:text="@string/spent"
+            android:textColor="@color/red"
+            android:textSize="18dp" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="305dp"
+        android:layout_marginTop="10dp"
+        android:text="Add"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/status" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

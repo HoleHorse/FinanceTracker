@@ -29,6 +29,10 @@
             android:parentActivityName=".MainActivity"
             android:label="All actions list">
         </activity>
+        <activity android:name=".AddNewActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="Add new">
+        </activity>
     </application>
 
 </manifest>

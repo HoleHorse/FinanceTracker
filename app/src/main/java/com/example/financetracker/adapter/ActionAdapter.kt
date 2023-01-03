@@ -11,13 +11,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.financetracker.R
 import com.example.financetracker.model.Action
 
-class ActionAdapter(private val context: Context, private var dataset: List<Action>, private val limit: Int) : RecyclerView.Adapter<ActionAdapter.ActionViewHolder>() {
+class ActionAdapter(private var dataset: List<Action>) : RecyclerView.Adapter<ActionAdapter.ActionViewHolder>() {
     class ActionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val img_state: ImageView
+        val imgState: ImageView
         val category: TextView
         val amount: TextView
         init {
-            img_state = itemView.findViewById(R.id.img_state)
+            imgState = itemView.findViewById(R.id.img_state)
             category = itemView.findViewById(R.id.category)
             amount = itemView.findViewById(R.id.amount)
         }
@@ -32,13 +32,9 @@ class ActionAdapter(private val context: Context, private var dataset: List<Acti
         val action: Action = dataset[position]
         holder.category.text = "Category: " + action.getCategory()
         holder.amount.text = "Amount: " + action.getAmount().toString()
-        holder.img_state.setImageResource(action.getImg())
+        holder.imgState.setImageResource(action.getImg())
     }
 
-    override fun getItemCount(): Int {
-        if(dataset.size > limit) {
-            return limit
-        }
-        return dataset.size
-    }
+    override fun getItemCount() = dataset.size
+
 }
