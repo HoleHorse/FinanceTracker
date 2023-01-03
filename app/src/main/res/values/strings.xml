@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">FinanceTracker</string>
-    <string name="balance_125000">Balance: 125000</string>
+    <string name="balance">Balance: %s</string>
     <string name="recent_actions">Recent actions</string>
     <string name="last_month_total">Last month total</string>
     <string name="income">Income</string>
-    <string name="_250000">250000</string>
-    <string name="_125000">125000</string>
+    <string name="income_num">%s</string>
+    <string name="spent_num">%s</string>
     <string name="spent">Expenditure</string>
     <string name="add">Add</string>
     <string name="category_food">Category: Food</string>

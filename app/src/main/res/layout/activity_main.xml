@@ -9,7 +9,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recent_list"
         android:layout_width="380dp"
-        android:layout_height="380dp"
+        android:layout_height="400dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="5dp"
@@ -23,11 +23,11 @@
         android:id="@+id/balance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="18dp"
         android:layout_marginTop="20dp"
-        android:text="@string/balance_125000"
+        android:text="@string/balance"
         android:textColor="#FFFFFF"
-        android:textSize="50sp"
+        android:textSize="40sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -73,9 +73,9 @@
         android:layout_height="28dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="3dp"
-        android:text="@string/_250000"
+        android:text="@string/income_num"
         android:textColor="@color/green"
-        android:textSize="20sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/income" />
 
@@ -107,9 +107,9 @@
         android:layout_height="29dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="3dp"
-        android:text="@string/_125000"
+        android:text="@string/spent_num"
         android:textColor="@color/red"
-        android:textSize="20sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/arrow_up"
         app:layout_constraintTop_toBottomOf="@+id/spent" />
 

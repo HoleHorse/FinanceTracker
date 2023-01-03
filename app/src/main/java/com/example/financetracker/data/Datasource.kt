@@ -41,6 +41,23 @@ class Datasource {
 
     fun addNew(action: Action) {
         actions.add(action)
+    }
 
+    fun getNumbers(): Numbers {
+        var balance: Int = 0
+        var income: Int = 0
+        var spent: Int = 0
+        for (a in actions) {
+            if (a.getImg() == R.drawable.arrow_up_circle_svgrepo_com) {
+                balance += a.getAmount()
+                income += a.getAmount()
+            } else {
+                balance -= a.getAmount()
+                spent += a.getAmount()
+            }
+        }
+        return Numbers(balance, income, spent)
     }
 }
+
+class Numbers(var balance: Int, var income: Int, var spent: Int)
