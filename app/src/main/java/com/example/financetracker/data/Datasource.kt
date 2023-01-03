@@ -44,9 +44,9 @@ class Datasource {
     }
 
     fun getNumbers(): Numbers {
-        var balance: Int = 0
-        var income: Int = 0
-        var spent: Int = 0
+        var balance = 0
+        var income = 0
+        var spent = 0
         for (a in actions) {
             if (a.getImg() == R.drawable.arrow_up_circle_svgrepo_com) {
                 balance += a.getAmount()
