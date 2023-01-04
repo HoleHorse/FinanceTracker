@@ -22,9 +22,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var myDataset = Datasource.getRecent(7)
         val linearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        binding.recentList.adapter = ActionAdapter(myDataset)
+        binding.recentList.adapter = ActionAdapter(Datasource.getRecent(7))
         binding.recentList.layoutManager = linearLayoutManager
 
         binding.seeAll.setOnClickListener {
@@ -37,6 +36,7 @@ class MainActivity : AppCompatActivity() {
 
         val nums: Numbers = Datasource.getNumbers()
         displayData(nums.balance, nums.income, nums.spent)
+
     }
 
     private fun displayData(balance: Int, income: Int, spent: Int) {

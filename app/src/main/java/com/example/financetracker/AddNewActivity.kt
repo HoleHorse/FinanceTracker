@@ -39,6 +39,7 @@ class AddNewActivity: AppCompatActivity() {
         } else {
             Datasource.addNew(Action(category, amount, R.drawable.arrow_down_circle_svgrepo_com, LocalDate.now()))
         }
+
     }
 
 }
