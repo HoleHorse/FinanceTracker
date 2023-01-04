@@ -33,7 +33,7 @@ public class DB extends SQLiteOpenHelper {
         return instance;
     }
 
-    public DB(Context context) {
+    private DB(Context context) {
         super(context, dbName, null, dbVersion);
     }
 
