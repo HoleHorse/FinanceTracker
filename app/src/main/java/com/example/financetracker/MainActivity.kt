@@ -8,6 +8,7 @@ import com.example.financetracker.adapter.ActionAdapter
 import com.example.financetracker.data.Datasource
 import com.example.financetracker.data.Numbers
 import com.example.financetracker.databinding.ActivityMainBinding
+import com.example.financetracker.db.DB
 import java.text.NumberFormat
 
 
@@ -20,9 +21,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        thread {
-//            DB.getData()
-//        }
+        DB.getInstance(this@MainActivity).getData()
 
         val linearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.recentList.adapter = ActionAdapter(Datasource.getRecent(7))

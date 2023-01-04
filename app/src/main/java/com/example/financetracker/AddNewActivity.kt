@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.financetracker.data.Datasource
 import com.example.financetracker.databinding.AddNewBinding
+import com.example.financetracker.db.DB
 import com.example.financetracker.model.Action
 import java.time.LocalDate
 
@@ -35,9 +36,9 @@ class AddNewActivity: AppCompatActivity() {
             category = "Undefined"
         }
         if (binding.status.checkedRadioButtonId == R.id.income) {
-            Datasource.addNew(Action(category, amount, R.drawable.arrow_up_circle_svgrepo_com, LocalDate.now()))
+            DB.getInstance(this@AddNewActivity).addNew(Action(category, amount, R.drawable.arrow_up_circle_svgrepo_com, LocalDate.now()))
         } else {
-            Datasource.addNew(Action(category, amount, R.drawable.arrow_down_circle_svgrepo_com, LocalDate.now()))
+            DB.getInstance(this@AddNewActivity).addNew(Action(category, amount, R.drawable.arrow_down_circle_svgrepo_com, LocalDate.now()))
         }
 
     }
