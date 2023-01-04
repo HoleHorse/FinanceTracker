@@ -5,7 +5,9 @@ import com.example.financetracker.model.Action
 import java.time.LocalDate
 
 class Datasource {
+
     companion object {
+//        private var actions: MutableList<Action> = mutableListOf()
         private var actions: MutableList<Action> = mutableListOf(
             Action("Leisure", 20000, R.drawable.arrow_down_circle_svgrepo_com, LocalDate.of(2019, 8, 23)),
             Action("Gift", 15000, R.drawable.arrow_up_circle_svgrepo_com, LocalDate.of(2019, 8, 23)),
@@ -33,6 +35,10 @@ class Datasource {
             Action("Salary", 250000, R.drawable.arrow_up_circle_svgrepo_com, LocalDate.now())
         )
 
+        fun setActions(actions: MutableList<Action>) {
+            this.actions = actions
+        }
+
         fun getRecent(limit: Int): List<Action> {
             return this.actions.takeLast(limit).reversed()
         }
@@ -43,6 +49,7 @@ class Datasource {
 
         fun addNew(action: Action) {
             this.actions.add(action)
+//            DB.addNew(action)
         }
 
         fun getNumbers(): Numbers {
