@@ -3,7 +3,6 @@ package com.example.financetracker
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.financetracker.data.Datasource
 import com.example.financetracker.databinding.AddNewBinding
 import com.example.financetracker.db.DB
 import com.example.financetracker.model.Action

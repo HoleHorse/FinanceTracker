@@ -16,7 +16,6 @@ import java.util.Objects;
 
 public class DB extends SQLiteOpenHelper {
     private static DB instance = null;
-    private Context myContext;
 
     private static final String dbName = "mob";
     private static final int dbVersion = 1;
@@ -36,7 +35,6 @@ public class DB extends SQLiteOpenHelper {
 
     public DB(Context context) {
         super(context, dbName, null, dbVersion);
-        this.myContext = context;
     }
 
     @Override
@@ -90,4 +88,5 @@ public class DB extends SQLiteOpenHelper {
         db.close();
         Datasource.Companion.setActions(actions);
     }
+
 }
