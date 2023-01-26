@@ -21,20 +21,40 @@ class CurrConvActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.convert.setOnClickListener {
-            val from = binding.fromInput
-            val to = binding.toInput
-            val amount = binding.amountInput
-            val url = "https://v6.exchangerate-api.com/v6/6b9ce7fd5b29002b1084f81d/pair/$from/$to/$amount"
+            convert().start()
+        }
+    }
+
+    private fun convert(): Thread {
+        return Thread {
+            val from = binding.fromInput.text
+            val to = binding.toInput.text
+            val amount = binding.amountInput.text
+            if (amount.toString().toDouble() < 0.0) {
+                updateUI("\n\nPlease, insert value more than or equal to 0")
+                return@Thread
+            }
+            val url =
+                "https://v6.exchangerate-api.com/v6/6b9ce7fd5b29002b1084f81d/pair/$from/$to/$amount"
             val connection = URL(url).openConnection() as HttpsURLConnection
             if (connection.responseCode == 200) {
                 val inputSystem = connection.inputStream
                 val inputStreamReader = InputStreamReader(inputSystem, "UTF-8")
                 val req = Gson().fromJson(inputStreamReader, Request::class.java)
-                binding.result.text = "Result: " + req.conversion_result
+                updateUI(req.conversion_result.toString())
                 inputStreamReader.close()
                 inputSystem.close()
             } else {
-                binding.result.text = "Result: Connection error, try later"
+                updateUI("An error occurred, make sure you are using correct codes")
+            }
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
+    fun updateUI(res: String) {
+        runOnUiThread {
+            kotlin.run {
+                binding.result.text = "Result: $res"
             }
         }
     }
