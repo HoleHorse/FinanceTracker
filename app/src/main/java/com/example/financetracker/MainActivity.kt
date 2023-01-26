@@ -11,7 +11,6 @@ import com.example.financetracker.databinding.ActivityMainBinding
 import com.example.financetracker.db.DB
 import java.text.NumberFormat
 
-
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
@@ -33,6 +32,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.addBtn.setOnClickListener {
             startActivity(Intent(this, AddNewActivity::class.java))
+        }
+
+        binding.convert.setOnClickListener {
+            startActivity(Intent(this, CurrConvActivity::class.java))
         }
 
         val nums: Numbers = Datasource.getNumbers()

@@ -149,4 +149,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/add_btn" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/convert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:clickable="true"
+        android:contentDescription="@string/temp"
+        android:src="@drawable/icons8_dollar_euro_exchange_60"
+        app:backgroundTint="#00FF00"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/see_all" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

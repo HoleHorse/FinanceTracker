@@ -14,4 +14,10 @@
     <string name="temp">temp</string>
     <string name="category"> Category</string>
     <string name="amount"> Amount</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="_3_letter_code">3 letter code</string>
+    <string name="result">Result: %s</string>
+    <string name="convert">Convert</string>
+    <string name="empty" />
 </resources>
