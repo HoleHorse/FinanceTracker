@@ -31,7 +31,7 @@ class CurrConvActivity : AppCompatActivity() {
             val to = binding.toInput.text
             val amount = binding.amountInput.text
             if (amount.toString().toDouble() < 0.0) {
-                updateUI("\n\nPlease, insert value more than or equal to 0")
+                updateUI("Error\nInsert value more than or equal to 0")
                 return@Thread
             }
             val url =
@@ -45,7 +45,7 @@ class CurrConvActivity : AppCompatActivity() {
                 inputStreamReader.close()
                 inputSystem.close()
             } else {
-                updateUI("An error occurred, make sure you are using correct codes")
+                updateUI("Error\nAn error occurred, make sure you are using correct codes")
             }
         }
     }
