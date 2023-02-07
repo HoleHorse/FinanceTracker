@@ -65,11 +65,11 @@ class MainActivity : AppCompatActivity() {
             applicationContext,
             1,
             intent,
-            PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
+            PendingIntent.FLAG_IMMUTABLE
         )
         val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
         alarmManager.setExactAndAllowWhileIdle(
-            AlarmManager.RTC_WAKEUP,
+            AlarmManager.RTC,
             getTime(),
             pendingIntent
         )

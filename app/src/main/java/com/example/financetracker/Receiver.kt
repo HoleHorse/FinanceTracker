@@ -14,7 +14,7 @@ class Receiver : BroadcastReceiver() {
         }
         val notifyPendingIntent = PendingIntent.getActivity(
             ctx, 1, notifyIntent,
-            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+            PendingIntent.FLAG_IMMUTABLE
         )
         val notification =
             NotificationCompat.Builder(ctx, "c_id")
