@@ -20,4 +20,6 @@
     <string name="result">Result: </string>
     <string name="convert">Convert</string>
     <string name="empty" />
+    <string name="see_data_for_last">See data for last</string>
+    <string name="all_time">all time</string>
 </resources>

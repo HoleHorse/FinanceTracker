@@ -46,11 +46,15 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, CurrConvActivity::class.java))
         }
 
-        val nums: Numbers = Datasource.getNumbers()
+        binding.analysis.setOnClickListener {
+            startActivity(Intent(this, DetailedActivity::class.java))
+        }
+
+        val nums: Numbers = Datasource.getNumbers(30)
         displayData(nums.balance, nums.income, nums.spent)
     }
 
-    private fun displayData(balance: Int, income: Int, spent: Int) {
+    private fun displayData(balance: Double, income: Double, spent: Double) {
         binding.balance.text =
             getString(R.string.balance, NumberFormat.getIntegerInstance().format(balance))
         binding.monthIncome.text =

@@ -21,7 +21,7 @@ class ActionAdapter(private var dataset: List<Action>) : RecyclerView.Adapter<Ac
             imgState = itemView.findViewById(R.id.img_state)
             category = itemView.findViewById(R.id.category)
             amount = itemView.findViewById(R.id.amount)
-            date = itemView.findViewById(R.id.date)
+            date = itemView.findViewById(R.id.percentage)
         }
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActionViewHolder {

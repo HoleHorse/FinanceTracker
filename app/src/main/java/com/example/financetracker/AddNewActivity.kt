@@ -26,10 +26,10 @@ class AddNewActivity: AppCompatActivity() {
     }
 
     private fun addNew() {
-        var amount = binding.inputAmount.text.toString().toIntOrNull()
+        var amount = binding.inputAmount.text.toString().toDoubleOrNull()
         var category = binding.inputCategory.text.toString()
         if (amount == null || amount < 0) {
-            amount = 0
+            amount = 0.0
         }
         if (category == "") {
             category = "Undefined"

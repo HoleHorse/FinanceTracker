@@ -42,7 +42,7 @@ public class DB extends SQLiteOpenHelper {
         String query = "CREATE TABLE " + table + " ("
                 + idCol + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                     + categoryCol + " VARCHAR,"
-                + amountCol + " INT,"
+                + amountCol + " DOUBLE,"
                 + statusCol + " VARCHAR(5),"
                 + dateCol + " VARCHAR(11))";
         db.execSQL(query);

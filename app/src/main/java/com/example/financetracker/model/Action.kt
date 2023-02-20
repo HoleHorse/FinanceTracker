@@ -3,13 +3,13 @@ package com.example.financetracker.model
 import com.example.financetracker.R
 import java.time.LocalDate
 
-class Action (private var category: String, private var amount: Int, private var img: Int, private var date: LocalDate) {
+class Action (private var category: String, private var amount: Double, private var img: Int, private var date: LocalDate) {
 
     fun getCategory(): String {
         return this.category
     }
 
-    fun getAmount(): Int {
+    fun getAmount(): Double {
         return this.amount
     }
 
