@@ -30,6 +30,10 @@ class CurrConvActivity : AppCompatActivity() {
             val from = binding.fromInput.text
             val to = binding.toInput.text
             val amount = binding.amountInput.text
+            if (amount.toString() == "") {
+                updateUI("Error\nNo value passed as amount")
+                return@Thread
+            }
             if (amount.toString().toDouble() < 0.0) {
                 updateUI("Error\nInsert value more than or equal to 0")
                 return@Thread
