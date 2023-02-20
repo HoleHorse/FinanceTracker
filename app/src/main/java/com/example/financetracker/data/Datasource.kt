@@ -65,10 +65,8 @@ class Datasource {
             categoriesSpent.forEach {
                 var amount = 0.0
                 for (a in this.actions) {
-                    if (a.getCategory() == it) {
-                        if (a.getCategory() == it && !a.getDate().isBefore(LocalDate.now().minusDays(days))) {
-                            amount += a.getAmount()
-                        }
+                    if (a.getCategory() == it && checkDate(days, a) && a.getStatus() == "down") {
+                        amount += a.getAmount()
                     }
                 }
                 val percentage = BigDecimal(amount/spent *100).setScale(3, BigDecimal.ROUND_HALF_UP)
@@ -79,7 +77,7 @@ class Datasource {
             categoriesIncome.forEach {
                 var amount = 0.0
                 for (a in this.actions) {
-                    if (a.getCategory() == it && !a.getDate().isBefore(LocalDate.now().minusDays(days))) {
+                    if (a.getCategory() == it && checkDate(days, a) && a.getStatus() == "up") {
                         amount += a.getAmount()
                     }
                 }
@@ -89,6 +87,10 @@ class Datasource {
                 res.add(detail)
             }
             return res
+        }
+
+        private fun checkDate(days: Long, a: Action): Boolean {
+            return !a.getDate().isBefore(LocalDate.now().minusDays(days))
         }
 
     }
